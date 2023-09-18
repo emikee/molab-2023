@@ -16,4 +16,4 @@ for i in stride(from: 8, to: 0, by: -1) {
 }
 
 
-//errors: tried using the stride function to let the for loop run in reverse but there is no output at all. I used: for i in stride(from: 1, to: 8, by: -1); the problem was that I had to change the range from 8 to 1 rather than having it the other way around.
+//errors: tried using the stride function to let the for loop run in reverse but there is no output at all. I used: for i in stride(from: 0, to: 8, by: -1); the problem was that I had to change the range from 8 to 0 rather than having it the other way around.
