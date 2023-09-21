@@ -1,28 +1,27 @@
-import UIKit
+//: Loading and displaying ascii art from app bundle
 
-// Read in an image from a url string
-func imageFor(_ str: String) -> UIImage {
-    let url = URL(string: str)
-    let imgData = try? Data(contentsOf: url!)
-    let uiImage = UIImage(data:imgData!)
-    return uiImage!
+import Foundation
+
+// Create text file and copy and paste to add - avoids string quoting requirements
+
+// Load and print one file from Resource bundle
+let path = Bundle.main.path(forResource: "hello-kitty.txt", ofType: nil)
+let str = try String(contentsOfFile: path!, encoding: .utf8)
+print(str)
+
+// same as a function
+func load(_ file :String) -> String {
+  let path = Bundle.main.path(forResource: file, ofType: nil)
+  let str = try? String(contentsOfFile: path!, encoding: .utf8)
+  return str!
 }
 
-// profile image
-let u1 = "https://lh3.googleusercontent.com/a/AEdFTp6gdANzhWmT2dZ69WP2UB5edH-_ZitKIkD0Cwks=s80"
-let ui1 = imageFor(u1)
+print(load("ice-cream.txt"))
 
-// itp staff
-let u2 = "https://tisch.nyu.edu/content/dam/tisch/itp/Faculty/dan-osullivan1.jpg.preset.square.jpeg"
-let ui2 = imageFor(u2)
+print(load("totoro.txt"))
 
-let sz = CGSize(width: 200, height: 200)
-let renderer = UIGraphicsImageRenderer(size: sz)
+//: [Previous](@previous)  [Next](@next)
 
-let image = renderer.image { (context) in
-    ui1.draw(in: CGRect(x: 0, y: 0, width: 100, height: 100))
-    ui2.draw(in: CGRect(x: 100, y: 0, width: 100, height: 100))
+// Source:
+// https://asciiart.website/index.php?art=animals/aardvarks
 
-}
-
-image
