@@ -65,14 +65,21 @@ func renderImg(_ width:Int, _ height:Int) -> UIImage {
 //        }
         
         //how can i put this in a loop?
-        context.fill(CGRect(x: 0, y: 0, width: len, height: hi/4))
-        context.fill(CGRect(x: len*2, y: 0, width: len, height: hi/4))
-        context.fill(CGRect(x: len, y: hi/4, width: len, height: hi/4))
-        context.fill(CGRect(x: len*3, y: hi/4, width: len, height: hi/4))
-        context.fill(CGRect(x: 0, y: hi/2, width: len, height: hi/4))
-        context.fill(CGRect(x: len*2, y: hi/2, width: len, height: hi/4))
-        context.fill(CGRect(x: len, y: hi-(hi/4), width: len, height: hi/4))
-        context.fill(CGRect(x: len*3, y: hi-(hi/4), width: len, height: hi/4))
+        while y < box.height {
+            var yMulti = 0
+            var xMulti = 0
+            context.fill(CGRect(x: len*xMulti, y: 0, width: len, height: hi/4))
+            xMulti += 2
+            y += Double(hi/4)
+        }
+//        context.fill(CGRect(x: 0, y: 0, width: len, height: hi/4))
+//        context.fill(CGRect(x: len*2, y: 0, width: len, height: hi/4))
+//        context.fill(CGRect(x: len, y: hi/4, width: len, height: hi/4))
+//        context.fill(CGRect(x: len*3, y: hi/4, width: len, height: hi/4))
+//        context.fill(CGRect(x: 0, y: hi/2, width: len, height: hi/4))
+//        context.fill(CGRect(x: len*2, y: hi/2, width: len, height: hi/4))
+//        context.fill(CGRect(x: len, y: hi-(hi/4), width: len, height: hi/4))
+//        context.fill(CGRect(x: len*3, y: hi-(hi/4), width: len, height: hi/4))
     }
     return image;
 }
