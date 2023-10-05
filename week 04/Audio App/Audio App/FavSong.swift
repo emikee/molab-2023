@@ -35,7 +35,21 @@ struct PlayFavSong: View {
     var body: some View {
         TimelineView(.animation) { context in
             VStack {
+                Text("soundIndex \(soundIndex)")
+                Text("soundFile \(soundFile)")
+                if let player = player {
+                    Text("duration " + String(format: "%.1f", player.duration))
+                    Text("currentTime " + String(format: "%.1f", player.currentTime))
+                }
                 HStack {
+                    Button {
+                        print("Button Stop")
+                        player?.stop()
+                    } label: {
+                        Image("Stop")
+                            .resizable()
+                            .frame(width: 48.0, height: 48.0)
+                    }
                     Button{
                         print("Button Play")
                         player = loadFavSong(soundFile)
@@ -45,21 +59,17 @@ struct PlayFavSong: View {
                         player?.play()
                     } label: {
                         Image("Play")
+                            .resizable()
+                            .frame(width: 48.0, height: 48.0)
                     }
-                    Button("Stop") {
-                        print("Button Stop")
-                        player?.stop()
-                    }
-                    Button("Next") {
+                    Button{
                         soundIndex = (soundIndex+1) % favSong.count
                         soundFile = favSong[soundIndex];
+                    } label: {
+                        Image("Skip")
+                            .resizable()
+                            .frame(width: 48.0, height: 48.0)
                     }
-                }
-                Text("soundIndex \(soundIndex)")
-                Text("soundFile \(soundFile)")
-                if let player = player {
-                    Text("duration " + String(format: "%.1f", player.duration))
-                    Text("currentTime " + String(format: "%.1f", player.currentTime))
                 }
             }
         }
