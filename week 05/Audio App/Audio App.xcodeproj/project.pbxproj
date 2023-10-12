@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A17297F22AD8308900F948AC /* Archivo in Resources */ = {isa = PBXBuildFile; fileRef = A17297F12AD8308900F948AC /* Archivo */; };
+		A17297F42AD830AB00F948AC /* Archivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A17297F32AD830AB00F948AC /* Archivo-Regular.ttf */; };
+		A17297F62AD830DF00F948AC /* Archivo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A17297F52AD830DF00F948AC /* Archivo-ExtraBold.ttf */; };
 		A1B069F22ACE5B6900A86935 /* Audio_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B069F12ACE5B6900A86935 /* Audio_AppApp.swift */; };
 		A1B069F42ACE5B6900A86935 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B069F32ACE5B6900A86935 /* ContentView.swift */; };
 		A1B069F62ACE5B6B00A86935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1B069F52ACE5B6B00A86935 /* Assets.xcassets */; };
@@ -22,9 +25,8 @@
 		A1B06A2B2ACEF6EB00A86935 /* okinawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A2A2ACEF6EB00A86935 /* okinawa.jpg */; };
 		A1B06A2D2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A2C2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png */; };
 		A1B06A2F2ACF076800A86935 /* lifehack.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A2E2ACF076800A86935 /* lifehack.jpeg */; };
-		A1B06A692AD74E0900A86935 /* Archivo in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A682AD74E0900A86935 /* Archivo */; };
-		A1B06A6B2AD79C3600A86935 /* That Kyoto Vibe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A6A2AD79C3600A86935 /* That Kyoto Vibe.mp3 */; };
-		A1B06A6D2AD79CB800A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A6C2AD79CB700A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 */; };
+		A1B06A702AD82E9C00A86935 /* That Kyoto Vibe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A6E2AD82E9C00A86935 /* That Kyoto Vibe.mp3 */; };
+		A1B06A712AD82E9C00A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A6F2AD82E9C00A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A17297F02AD82FC100F948AC /* Audio-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Audio-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		A17297F12AD8308900F948AC /* Archivo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Archivo; path = ../../../../../../Downloads/Assets/Fonts/Archivo; sourceTree = "<group>"; };
+		A17297F32AD830AB00F948AC /* Archivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Archivo-Regular.ttf"; path = "../../../../../../Downloads/Assets/Fonts/Archivo/static/Archivo/Archivo-Regular.ttf"; sourceTree = "<group>"; };
+		A17297F52AD830DF00F948AC /* Archivo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Archivo-ExtraBold.ttf"; path = "../../../../../../Downloads/Assets/Fonts/Archivo/static/Archivo/Archivo-ExtraBold.ttf"; sourceTree = "<group>"; };
 		A1B069EE2ACE5B6900A86935 /* Audio App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Audio App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B069F12ACE5B6900A86935 /* Audio_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_AppApp.swift; sourceTree = "<group>"; };
 		A1B069F32ACE5B6900A86935 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,9 +69,8 @@
 		A1B06A2A2ACEF6EB00A86935 /* okinawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = okinawa.jpg; sourceTree = "<group>"; };
 		A1B06A2C2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Childish_Gambino_-_Awaken,_My_Love!.png"; sourceTree = "<group>"; };
 		A1B06A2E2ACF076800A86935 /* lifehack.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lifehack.jpeg; sourceTree = "<group>"; };
-		A1B06A682AD74E0900A86935 /* Archivo */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Archivo; path = ../../../../../../Downloads/Assets/Fonts/Archivo; sourceTree = "<group>"; };
-		A1B06A6A2AD79C3600A86935 /* That Kyoto Vibe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "That Kyoto Vibe.mp3"; path = "../../../../../../Downloads/That Kyoto Vibe.mp3"; sourceTree = "<group>"; };
-		A1B06A6C2AD79CB700A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "1 MINUTE Relaxing rain sound rain.mp3"; path = "../../../../../../Downloads/1 MINUTE Relaxing rain sound rain.mp3"; sourceTree = "<group>"; };
+		A1B06A6E2AD82E9C00A86935 /* That Kyoto Vibe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "That Kyoto Vibe.mp3"; sourceTree = "<group>"; };
+		A1B06A6F2AD82E9C00A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "1 MINUTE Relaxing rain sound rain.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,7 @@
 		A1B069F02ACE5B6900A86935 /* Audio App */ = {
 			isa = PBXGroup;
 			children = (
+				A17297F02AD82FC100F948AC /* Audio-App-Info.plist */,
 				A1B069F12ACE5B6900A86935 /* Audio_AppApp.swift */,
 				A1B069F32ACE5B6900A86935 /* ContentView.swift */,
 				A1B06A1F2ACE5FFB00A86935 /* FavSong.swift */,
@@ -155,15 +161,17 @@
 		A1B06A292ACE8B2D00A86935 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A1B06A682AD74E0900A86935 /* Archivo */,
+				A17297F52AD830DF00F948AC /* Archivo-ExtraBold.ttf */,
+				A17297F32AD830AB00F948AC /* Archivo-Regular.ttf */,
+				A17297F12AD8308900F948AC /* Archivo */,
+				A1B06A6F2AD82E9C00A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 */,
+				A1B06A6E2AD82E9C00A86935 /* That Kyoto Vibe.mp3 */,
 				A1B06A2A2ACEF6EB00A86935 /* okinawa.jpg */,
 				A1B06A272ACE8AB500A86935 /* life hack Vaundy (Guitar cover).mp3 */,
 				A1B06A252ACE8A4E00A86935 /* Redbone - Childish Gambino (Guitar Cover) (1).mp3 */,
 				A1B06A2E2ACF076800A86935 /* lifehack.jpeg */,
 				A1B06A2C2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png */,
 				A1B06A232ACE899B00A86935 /* 92914 - Okinawa (Audio).mp3 */,
-				A1B06A6A2AD79C3600A86935 /* That Kyoto Vibe.mp3 */,
-				A1B06A6C2AD79CB700A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -274,13 +282,15 @@
 			files = (
 				A1B06A2F2ACF076800A86935 /* lifehack.jpeg in Resources */,
 				A1B069F92ACE5B6B00A86935 /* Preview Assets.xcassets in Resources */,
+				A17297F42AD830AB00F948AC /* Archivo-Regular.ttf in Resources */,
 				A1B06A242ACE899B00A86935 /* 92914 - Okinawa (Audio).mp3 in Resources */,
+				A17297F22AD8308900F948AC /* Archivo in Resources */,
 				A1B06A262ACE8A4E00A86935 /* Redbone - Childish Gambino (Guitar Cover) (1).mp3 in Resources */,
-				A1B06A6B2AD79C3600A86935 /* That Kyoto Vibe.mp3 in Resources */,
+				A1B06A702AD82E9C00A86935 /* That Kyoto Vibe.mp3 in Resources */,
 				A1B069F62ACE5B6B00A86935 /* Assets.xcassets in Resources */,
-				A1B06A6D2AD79CB800A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 in Resources */,
+				A1B06A712AD82E9C00A86935 /* 1 MINUTE Relaxing rain sound rain.mp3 in Resources */,
 				A1B06A2B2ACEF6EB00A86935 /* okinawa.jpg in Resources */,
-				A1B06A692AD74E0900A86935 /* Archivo in Resources */,
+				A17297F62AD830DF00F948AC /* Archivo-ExtraBold.ttf in Resources */,
 				A1B06A2D2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png in Resources */,
 				A1B06A282ACE8AB500A86935 /* life hack Vaundy (Guitar cover).mp3 in Resources */,
 			);
@@ -472,6 +482,7 @@
 				DEVELOPMENT_TEAM = X2YK455986;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Audio-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -501,6 +512,7 @@
 				DEVELOPMENT_TEAM = X2YK455986;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Audio-App-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

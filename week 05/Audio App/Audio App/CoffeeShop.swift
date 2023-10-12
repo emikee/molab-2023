@@ -1,82 +1,100 @@
-import SwiftUI
+import Foundation
 import AVFoundation
+import SwiftUI
 
-struct AudioComponent {
-    let audioName: String
-    let file: String
-}
-let bgMusic = AudioComponent(audioName: "Background music", file: "That Kyoto Vibe.mp3")
-let rainSound = AudioComponent(audioName: "Rain", file: "1 MINUTE Relaxing rain sound rain.mp3")
+class GSAudio: NSObject, AVAudioPlayerDelegate {
 
-func loadBundleAudio(_ fileName:String) -> AVAudioPlayer? {
-    let path = Bundle.main.path(forResource: fileName, ofType:nil)!
-    let url = URL(fileURLWithPath: path)
-    do {
-        return try AVAudioPlayer(contentsOf: url)
-    } catch {
-        print("loadBundleAudio error", error)
-    }
-    return nil
-}
+    static let sharedInstance = GSAudio()
 
-struct PlayCoffeeShop: View {
-    @State private var soundIndex = 0
-    //    @State private var soundFile = bundleAudio[0]
-    @State private var player: AVAudioPlayer? = nil
-    var body: some View {
-        TimelineView(.animation) { context in
-            VStack {
-                HStack {
-                    Button {
-                        print("Button Stop")
-                        player?.stop()
-                    } label: {
-                        Image("Stop")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                    }
-                    Button{
-                        print("Button Play")
-                        player = loadBundleAudio(bgMusic.file)
-                        // Loop indefinitely
-                        player?.numberOfLoops = -1
-                        player?.play()
-                    } label: {
-                        Image("Play")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                    }
-                    Text("\(bgMusic.audioName)")
+    private override init() { }
+
+    var players: [URL: AVAudioPlayer] = [:]
+    var duplicatePlayers: [AVAudioPlayer] = []
+
+    func playSound(soundFileName: String) {
+
+        guard let bundle = Bundle.main.path(forResource: soundFileName, ofType: "aac") else { return }
+        let soundFileNameURL = URL(fileURLWithPath: bundle)
+
+        if let player = players[soundFileNameURL] { //player for sound has been found
+
+            if !player.isPlaying { //player is not in use, so use that one
+                player.prepareToPlay()
+                player.play()
+            } else { // player is in use, create a new, duplicate, player and use that instead
+
+                do {
+                    let duplicatePlayer = try AVAudioPlayer(contentsOf: soundFileNameURL)
+
+                    duplicatePlayer.delegate = self
+                    //assign delegate for duplicatePlayer so delegate can remove the duplicate once it's stopped playing
+
+                    duplicatePlayers.append(duplicatePlayer)
+                    //add duplicate to array so it doesn't get removed from memory before finishing
+
+                    duplicatePlayer.prepareToPlay()
+                    duplicatePlayer.play()
+                } catch let error {
+                    print(error.localizedDescription)
                 }
-                HStack {
-                    Button {
-                        print("Button Stop")
-                        player?.stop()
-                    } label: {
-                        Image("Stop")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                    }
-                    Button{
-                        print("Button Play")
-                        player = loadBundleAudio(rainSound.file)
-                        // Loop indefinitely
-                        player?.numberOfLoops = -1
-                        player?.play()
-                    } label: {
-                        Image("Play")
-                            .resizable()
-                            .frame(width: 32.0, height: 32.0)
-                    }
-                    Text("\(rainSound.audioName)")
-                }
+
+            }
+        } else { //player has not been found, create a new player with the URL if possible
+            do {
+                let player = try AVAudioPlayer(contentsOf: soundFileNameURL)
+                players[soundFileNameURL] = player
+                player.prepareToPlay()
+                player.play()
+            } catch let error {
+                print(error.localizedDescription)
             }
         }
     }
-    
-    struct Page2_Previews: PreviewProvider {
-        static var previews: some View {
-            PlayCoffeeShop()
+
+
+    func playSounds(soundFileNames: [String]) {
+        for soundFileName in soundFileNames {
+            playSound(soundFileName: soundFileName)
         }
+    }
+
+    func playSounds(soundFileNames: String...) {
+        for soundFileName in soundFileNames {
+            playSound(soundFileName: soundFileName)
+        }
+    }
+
+    func playSounds(soundFileNames: [String], withDelay: Double) { //withDelay is in seconds
+        for (index, soundFileName) in soundFileNames.enumerated() {
+            let delay = withDelay * Double(index)
+            let _ = Timer.scheduledTimer(timeInterval: delay, target: self, selector: #selector(playSoundNotification(_:)), userInfo: ["fileName": soundFileName], repeats: false)
+        }
+    }
+
+    @objc func playSoundNotification(_ notification: NSNotification) {
+        if let soundFileName = notification.userInfo?["fileName"] as? String {
+            playSound(soundFileName: soundFileName)
+        }
+    }
+
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if let index = duplicatePlayers.index(of: player) {
+            duplicatePlayers.remove(at: index)
+        }
+    }
+
+}
+
+struct PlayCoffeeShop: View {
+    @State var audioPlayer: AVAudioPlayer!
+    var body: some View {
+        Image(systemName: "play.circle.fill").resizable()
+            .frame(width: 50, height: 50)
+            .aspectRatio(contentMode: .fit)
+    }
+}
+struct ContentView2_Previews: PreviewProvider {
+    static var previews: some View {
+        PlayCoffeeShop()
     }
 }

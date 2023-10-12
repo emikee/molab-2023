@@ -23,13 +23,14 @@ struct PlayCoffeeShop: View {
     @State private var soundIndex = 0
     //    @State private var soundFile = bundleAudio[0]
     @State private var player: AVAudioPlayer? = nil
+    @State private var playCount = 0
     var body: some View {
         TimelineView(.animation) { context in
             VStack {
                 HStack {
                     Button {
                         print("Button Stop")
-                        player?.stop()
+                        player?.pause()
                     } label: {
                         Image("Stop")
                             .resizable()
