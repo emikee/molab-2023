@@ -1,21 +1,12 @@
-//
-// Audio bundled with app
-// @State to track variables that affect UI
-// TimelineView for timer triggered updates
-// Keep audio short
-
 import SwiftUI
 import AVFoundation
 
-let bundleAudio = [
-    "bbc-birds-1.m4a",
-    "bbc-birds-2.m4a",
-    "scale-1.m4a"
-];
-
-// Create a Audio Player given a file stored in the app bundle
-// Detailed documntation on AVAudioPlayer
-//  https://developer.apple.com/documentation/avfaudio/avaudioplayer
+struct AudioComponent {
+    let audioName: String
+    let file: String
+}
+let bgMusic = AudioComponent(audioName: "Background music", file: "That Kyoto Vibe.mp3")
+let rainSound = AudioComponent(audioName: "Rain", file: "1 MINUTE Relaxing rain sound rain.mp3")
 
 func loadBundleAudio(_ fileName:String) -> AVAudioPlayer? {
     let path = Bundle.main.path(forResource: fileName, ofType:nil)!
@@ -30,52 +21,62 @@ func loadBundleAudio(_ fileName:String) -> AVAudioPlayer? {
 
 struct PlayCoffeeShop: View {
     @State private var soundIndex = 0
-    @State private var soundFile = bundleAudio[0]
+    //    @State private var soundFile = bundleAudio[0]
     @State private var player: AVAudioPlayer? = nil
     var body: some View {
         TimelineView(.animation) { context in
             VStack {
                 HStack {
-                    Button("Play") {
+                    Button {
+                        print("Button Stop")
+                        player?.stop()
+                    } label: {
+                        Image("Stop")
+                            .resizable()
+                            .frame(width: 32.0, height: 32.0)
+                    }
+                    Button{
                         print("Button Play")
-                        player = loadBundleAudio(soundFile)
-                        print("player", player as Any)
+                        player = loadBundleAudio(bgMusic.file)
                         // Loop indefinitely
                         player?.numberOfLoops = -1
                         player?.play()
+                    } label: {
+                        Image("Play")
+                            .resizable()
+                            .frame(width: 32.0, height: 32.0)
                     }
-                    Button("Stop") {
+                    Text("\(bgMusic.audioName)")
+                }
+                HStack {
+                    Button {
                         print("Button Stop")
                         player?.stop()
+                    } label: {
+                        Image("Stop")
+                            .resizable()
+                            .frame(width: 32.0, height: 32.0)
                     }
-                    Button("Next") {
-                        soundIndex = (soundIndex+1) % bundleAudio.count
-                        soundFile = bundleAudio[soundIndex];
+                    Button{
+                        print("Button Play")
+                        player = loadBundleAudio(rainSound.file)
+                        // Loop indefinitely
+                        player?.numberOfLoops = -1
+                        player?.play()
+                    } label: {
+                        Image("Play")
+                            .resizable()
+                            .frame(width: 32.0, height: 32.0)
                     }
-                }
-                Text("soundIndex \(soundIndex)")
-                Text("soundFile \(soundFile)")
-                if let player = player {
-                    Text("duration " + String(format: "%.1f", player.duration))
-                    Text("currentTime " + String(format: "%.1f", player.currentTime))
+                    Text("\(rainSound.audioName)")
                 }
             }
         }
     }
-}
-
-struct Page2_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayCoffeeShop()
+    
+    struct Page2_Previews: PreviewProvider {
+        static var previews: some View {
+            PlayCoffeeShop()
+        }
     }
 }
-
-// https://developer.apple.com/documentation/avfaudio/avaudioplayer
-
-// https://developer.apple.com/documentation/swiftui/state
-
-// Source for audio clips
-// https://www.youraccompanist.com/free-scales-and-warm-ups/reference-scales
-// Reference Scales_On A Flat-G Sharp.mp3
-// https://sound-effects.bbcrewind.co.uk/search?cat=Animals
-// https://file-examples.com/index.php/sample-audio-files/sample-mp3-download/

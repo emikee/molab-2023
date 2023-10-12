@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Audio App
-//
-//  Created by Emily Shen on 10/4/23.
-//
-
 import SwiftUI
 
 
@@ -25,6 +18,8 @@ struct ContentView: View {
                     VStack(alignment: .center) {
                         NavigationLink (destination: PlayFavSong()) {
                             Text("My Favorite Song")
+                                .font(Font.custom("Archivo-Regular.ttf", size: 24))
+                                //.font(.title)
                         }
                         .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.black)
@@ -34,6 +29,8 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity)
                         NavigationLink (destination: PlayCoffeeShop()) {
                             Text("Study Break")
+                                .font(Font.custom("Archivo-Default", size: 24))
+                                //.font(.title)
                         }
                         .padding(/*@START_MENU_TOKEN@*/.all, 10.0/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.black)
@@ -46,6 +43,7 @@ struct ContentView: View {
                     .navigationTitle("Emily's Space")
                     .padding(/*@START_MENU_TOKEN@*/.all, 20.0/*@END_MENU_TOKEN@*/)
                     .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
+                    
                     
                 }
                 .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.631, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/)
