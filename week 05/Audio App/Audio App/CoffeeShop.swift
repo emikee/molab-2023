@@ -78,23 +78,35 @@ class GSAudio: NSObject, AVAudioPlayerDelegate {
     }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if let index = duplicatePlayers.index(of: player) {
+        if let index = duplicatePlayers.firstIndex(of: player) {
             duplicatePlayers.remove(at: index)
         }
     }
 
 }
 
+struct soundClip {
+    let audioFile: String
+    let audioName: String
+}
+
+let musicSound = soundClip(audioFile: "That Kyoto Vibe.mp3", audioName: "Relaxing Music")
+
 struct PlayCoffeeShop: View {
     @State var audioPlayer: AVAudioPlayer!
     var body: some View {
-        Image(systemName: "play.circle.fill").resizable()
-            .frame(width: 50, height: 50)
-            .aspectRatio(contentMode: .fit)
+        HStack {
+            Button("Play") {
+                GSAudio.sharedInstance.playSound(soundFileName: musicSound.audioFile)
+            }
+            //            Image(systemName: "play.circle.fill").resizable()
+            //                .frame(width: 50, height: 50)
+            //                .aspectRatio(contentMode: .fit)
+        }
     }
-}
-struct ContentView2_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayCoffeeShop()
+    struct ContentView2_Previews: PreviewProvider {
+        static var previews: some View {
+            PlayCoffeeShop()
+        }
     }
 }
