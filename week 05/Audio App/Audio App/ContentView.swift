@@ -3,7 +3,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var navPath = NavigationPath()
-    let selections: [String: Any] = ["My Favorite Song": PlayFavSong(), "Study Break": PlayCoffeeShop()]
+    let selections: [String: Any] = ["My Favorite Song": PlayFavSong(), "Study Break": AudioRow(audio: audiofiles[0])]
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
@@ -26,7 +26,7 @@ struct ContentView: View {
                         .hoverEffect(/*@START_MENU_TOKEN@*/.lift/*@END_MENU_TOKEN@*/)
                         .cornerRadius(/*@START_MENU_TOKEN@*/5.0/*@END_MENU_TOKEN@*/)
                         .frame(maxWidth: .infinity)
-                        NavigationLink (destination: PlayCoffeeShop()) {
+                        NavigationLink (destination: AudioRow(audio: audiofiles[0])) {
                             Text("Study Break")
                                 .font(Font.custom("Archivo-ExtraBold", size: 24))
                         }
