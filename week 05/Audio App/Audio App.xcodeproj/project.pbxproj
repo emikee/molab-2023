@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A143F7532AF0492900247DE2 /* ColorStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143F7522AF0492900247DE2 /* ColorStyles.swift */; };
+		A143F7552AF04B3600247DE2 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A143F7542AF04B3600247DE2 /* VolumeSlider.swift */; };
 		A17297F92AD84AC100F948AC /* Archivo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A17297F72AD84AC100F948AC /* Archivo-Regular.ttf */; };
 		A17297FA2AD84AC100F948AC /* Archivo-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A17297F82AD84AC100F948AC /* Archivo-ExtraBold.ttf */; };
 		A18C4B882AE0B77F0089CCDE /* FavSongCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18C4B872AE0B77F0089CCDE /* FavSongCollection.swift */; };
@@ -36,7 +38,6 @@
 		A1E3A2C12AE433B50007A8EF /* talking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1E3A2C02AE433B50007A8EF /* talking.mp3 */; };
 		A1E3A2C52AE434290007A8EF /* AudioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3A2C42AE434290007A8EF /* AudioRow.swift */; };
 		A1E3A2C72AE434C30007A8EF /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3A2C62AE434C30007A8EF /* AudioFile.swift */; };
-		A1E3A2C92AE43C500007A8EF /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3A2C82AE43C500007A8EF /* VolumeSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A143F7522AF0492900247DE2 /* ColorStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorStyles.swift; sourceTree = "<group>"; };
+		A143F7542AF04B3600247DE2 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 		A17297F02AD82FC100F948AC /* Audio-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Audio-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A17297F72AD84AC100F948AC /* Archivo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-Regular.ttf"; sourceTree = "<group>"; };
 		A17297F82AD84AC100F948AC /* Archivo-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Archivo-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -90,7 +93,6 @@
 		A1E3A2C02AE433B50007A8EF /* talking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = talking.mp3; sourceTree = "<group>"; };
 		A1E3A2C42AE434290007A8EF /* AudioRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRow.swift; sourceTree = "<group>"; };
 		A1E3A2C62AE434C30007A8EF /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
-		A1E3A2C82AE43C500007A8EF /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,8 +210,9 @@
 			children = (
 				A1B06A212ACE635500A86935 /* CoffeeShop.swift */,
 				A1E3A2C42AE434290007A8EF /* AudioRow.swift */,
-				A1E3A2C82AE43C500007A8EF /* VolumeSlider.swift */,
 				A1E3A2C62AE434C30007A8EF /* AudioFile.swift */,
+				A143F7522AF0492900247DE2 /* ColorStyles.swift */,
+				A143F7542AF04B3600247DE2 /* VolumeSlider.swift */,
 			);
 			path = "Study Break";
 			sourceTree = "<group>";
@@ -360,11 +363,12 @@
 				A18C4B8A2AE0B8A90089CCDE /* Document.swift in Sources */,
 				A18C4B902AE0BA130089CCDE /* ItemModel.swift in Sources */,
 				A1B069F42ACE5B6900A86935 /* ContentView.swift in Sources */,
+				A143F7552AF04B3600247DE2 /* VolumeSlider.swift in Sources */,
 				A1B069F22ACE5B6900A86935 /* Audio_AppApp.swift in Sources */,
 				A18C4B882AE0B77F0089CCDE /* FavSongCollection.swift in Sources */,
 				A18C4B8C2AE0B9340089CCDE /* UpdateImageView.swift in Sources */,
-				A1E3A2C92AE43C500007A8EF /* VolumeSlider.swift in Sources */,
 				A18C4B942AE0BA7C0089CCDE /* AddImageView.swift in Sources */,
+				A143F7532AF0492900247DE2 /* ColorStyles.swift in Sources */,
 				A1E3A2C52AE434290007A8EF /* AudioRow.swift in Sources */,
 				A1E3A2C72AE434C30007A8EF /* AudioFile.swift in Sources */,
 				A18C4B8E2AE0B9EC0089CCDE /* ItemRow.swift in Sources */,
