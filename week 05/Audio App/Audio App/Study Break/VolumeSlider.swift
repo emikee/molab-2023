@@ -19,9 +19,9 @@ struct VerticalVolumeSlider<T: BinaryFloatingPoint>: View {
             ZStack {
                 GeometryReader { geo in
                     ZStack(alignment: .bottom) {
-                        RoundedRectangle(cornerRadius: isActive ? width : 20, style: .circular)
+                        RoundedRectangle(cornerRadius: isActive ? width : width/8, style: .circular)
                             .fill(emptyColor)
-                        RoundedRectangle(cornerRadius: isActive ? width : 20, style: .circular)
+                        RoundedRectangle(cornerRadius: isActive ? width : width/8, style: .circular)
                             .fill(isActive ? activeFillColor : fillColor)
                             .mask({
                                 VStack {
@@ -122,3 +122,5 @@ struct VerticalVolumeSlider<T: BinaryFloatingPoint>: View {
         return ((localRealProgress + localTempProgress) * (inRange.upperBound - inRange.lowerBound)) + inRange.lowerBound
     }
 }
+
+//source

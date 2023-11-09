@@ -4,7 +4,7 @@ import AVFoundation
 import MediaPlayer
 import UIKit
 
-var player: AVAudioPlayer!
+//var player: AVAudioPlayer!
 
 func loadSound(_ fileName:String) -> AVAudioPlayer? {
     let path = Bundle.main.path(forResource: fileName, ofType:nil)!
@@ -19,18 +19,12 @@ func loadSound(_ fileName:String) -> AVAudioPlayer? {
 
 struct AudioRow: View {
     var audio: AudioFile
-    //@State private var player: AVAudioPlayer? = nil
+    @State private var player: AVAudioPlayer? = nil
     @State private var volume: Float = 0
     private var normalFillColor: Color { ColorStyles.white.opacity(0.5) }
     private var emptyColor: Color { ColorStyles.white.opacity(0.3) }
     
-//    init() {
-//        //loadSound(audio.url)
-//        //player?.prepareToPlay()
-//        player?.numberOfLoops = -1
-//    }
     var body: some View {
-        //print("player", player as Any)
         VStack {
             
             Text(audio.name)
@@ -48,24 +42,19 @@ struct AudioRow: View {
                 onEditingChanged: {change in
                     //player = loadSound(audio.url)
                     player?.volume = volume
-//                    if (volume > 0) {
-//                        player?.numberOfLoops = -1
-//                        player?.play()
-//                        print("played \(volume)")
-//                    } else {
-//                        player?.pause()
-//                        print("pause \(volume)")
-//                    }
+                    if (volume > 0) {
+                        player?.play()
+                        print("played \(audio.url)")
+                    } else {
+                        player?.pause()
+                        print("paused \(audio.url)")
+                    }
                 })
             .frame(height: 130)
-            
-            Button("Play") {
-                print("Button Play")
+            .onAppear() {
                 player = loadSound(audio.url)
-                print("player", player as Any)
                 player?.numberOfLoops = -1
-                volume = 0
-                player?.play()
+                player?.volume = 0
             }
         }
     }
