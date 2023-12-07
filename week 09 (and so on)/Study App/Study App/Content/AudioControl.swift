@@ -13,38 +13,34 @@ struct AudioControl: View {
         let containerWidth:CGFloat = UIScreen.main.bounds.width - 32.0
         
         ScrollView{
+            MusicRow(audio: musicfiles[0])
+                .padding(.all, 32.0)
+                .frame(maxWidth: .infinity)
             Grid(
-                alignment: .leading,
+                alignment: .center,
                 horizontalSpacing: 8,
                 verticalSpacing: 32) {
                     GridRow {
                         AudioRow(audio: audiofiles[0])
-                            .frame(width: containerWidth * 0.50)
+                            .frame(width: containerWidth * 0.33)
                         AudioRow(audio: audiofiles[1])
-                            .frame(width: containerWidth * 0.50)
-                    }
-                    .frame(maxWidth: .infinity)
-                    GridRow {
+                            .frame(width: containerWidth * 0.33)
                         AudioRow(audio: audiofiles[2])
-                            .frame(width: containerWidth * 0.50)
+                            .frame(width: containerWidth * 0.33)
+                    }
+                    .frame(maxWidth: .infinity)
+                    GridRow {
                         AudioRow(audio: audiofiles[3])
-                            .frame(width: containerWidth * 0.50)
-                    }
-                    .frame(maxWidth: .infinity)
-                    GridRow {
+                            .frame(width: containerWidth * 0.33)
                         AudioRow(audio: audiofiles[4])
-                            .frame(width: containerWidth * 0.50)
+                            .frame(width: containerWidth * 0.33)
                         AudioRow(audio: audiofiles[5])
-                            .frame(width: containerWidth * 0.50)
+                            .frame(width: containerWidth * 0.33)
                     }
                     .frame(maxWidth: .infinity)
-                    GridRow {
-                        AudioRow(audio: audiofiles[6])
-                            .frame(width: containerWidth * 0.50)
-                    }
-                    .frame(maxWidth: .infinity)
-                
                 }
+                .padding(.vertical, 32.0)
+                .padding(.horizontal, 16.0)
         }
         .padding(.horizontal, 2.0)
         .padding(.vertical, 24.0)

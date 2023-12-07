@@ -33,9 +33,6 @@
 		A1B06A2B2ACEF6EB00A86935 /* okinawa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A2A2ACEF6EB00A86935 /* okinawa.jpg */; };
 		A1B06A2D2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A2C2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png */; };
 		A1B06A2F2ACF076800A86935 /* lifehack.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A2E2ACF076800A86935 /* lifehack.jpeg */; };
-		A1B06A702AD82E9C00A86935 /* That Kyoto Vibe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A6E2AD82E9C00A86935 /* That Kyoto Vibe.mp3 */; };
-		A1B06A712AD82E9C00A86935 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1B06A6F2AD82E9C00A86935 /* rain.mp3 */; };
-		A1E3A2C12AE433B50007A8EF /* talking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A1E3A2C02AE433B50007A8EF /* talking.mp3 */; };
 		A1E3A2C52AE434290007A8EF /* AudioRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3A2C42AE434290007A8EF /* AudioRow.swift */; };
 		A1E3A2C72AE434C30007A8EF /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3A2C62AE434C30007A8EF /* AudioFile.swift */; };
 /* End PBXBuildFile section */
@@ -88,9 +85,6 @@
 		A1B06A2A2ACEF6EB00A86935 /* okinawa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = okinawa.jpg; sourceTree = "<group>"; };
 		A1B06A2C2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Childish_Gambino_-_Awaken,_My_Love!.png"; sourceTree = "<group>"; };
 		A1B06A2E2ACF076800A86935 /* lifehack.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lifehack.jpeg; sourceTree = "<group>"; };
-		A1B06A6E2AD82E9C00A86935 /* That Kyoto Vibe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "That Kyoto Vibe.mp3"; sourceTree = "<group>"; };
-		A1B06A6F2AD82E9C00A86935 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
-		A1E3A2C02AE433B50007A8EF /* talking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = talking.mp3; sourceTree = "<group>"; };
 		A1E3A2C42AE434290007A8EF /* AudioRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRow.swift; sourceTree = "<group>"; };
 		A1E3A2C62AE434C30007A8EF /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,15 +186,12 @@
 			children = (
 				A17297F82AD84AC100F948AC /* Archivo-ExtraBold.ttf */,
 				A17297F72AD84AC100F948AC /* Archivo-Regular.ttf */,
-				A1B06A6F2AD82E9C00A86935 /* rain.mp3 */,
-				A1B06A6E2AD82E9C00A86935 /* That Kyoto Vibe.mp3 */,
 				A1B06A2A2ACEF6EB00A86935 /* okinawa.jpg */,
 				A1B06A272ACE8AB500A86935 /* life hack Vaundy (Guitar cover).mp3 */,
 				A1B06A252ACE8A4E00A86935 /* Redbone - Childish Gambino (Guitar Cover) (1).mp3 */,
 				A1B06A2E2ACF076800A86935 /* lifehack.jpeg */,
 				A1B06A2C2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png */,
 				A1B06A232ACE899B00A86935 /* 92914 - Okinawa (Audio).mp3 */,
-				A1E3A2C02AE433B50007A8EF /* talking.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -322,14 +313,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1B06A2F2ACF076800A86935 /* lifehack.jpeg in Resources */,
-				A1E3A2C12AE433B50007A8EF /* talking.mp3 in Resources */,
 				A17297F92AD84AC100F948AC /* Archivo-Regular.ttf in Resources */,
 				A1B069F92ACE5B6B00A86935 /* Preview Assets.xcassets in Resources */,
 				A1B06A242ACE899B00A86935 /* 92914 - Okinawa (Audio).mp3 in Resources */,
 				A1B06A262ACE8A4E00A86935 /* Redbone - Childish Gambino (Guitar Cover) (1).mp3 in Resources */,
-				A1B06A702AD82E9C00A86935 /* That Kyoto Vibe.mp3 in Resources */,
 				A1B069F62ACE5B6B00A86935 /* Assets.xcassets in Resources */,
-				A1B06A712AD82E9C00A86935 /* rain.mp3 in Resources */,
 				A1B06A2B2ACEF6EB00A86935 /* okinawa.jpg in Resources */,
 				A1B06A2D2ACF074000A86935 /* Childish_Gambino_-_Awaken,_My_Love!.png in Resources */,
 				A1B06A282ACE8AB500A86935 /* life hack Vaundy (Guitar cover).mp3 in Resources */,

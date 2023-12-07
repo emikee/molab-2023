@@ -33,14 +33,13 @@ struct AudioRow: View {
     
     var body: some View {
         VStack {
-            
             volumeSlider(
                 value: $volume,
                 inRange: 0...audio.audioMax,
                 activeFillColor: ColorStyles.white,
                 fillColor: normalFillColor,
                 emptyColor: emptyColor,
-                width: 128,
+                width: 96,
                 onEditingChanged: {change in
                     //player = loadSound(audio.url)
                     player?.volume = volume

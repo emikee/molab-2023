@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A12E7C492B211C88008DE82B /* MusicFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E7C482B211C88008DE82B /* MusicFile.swift */; };
+		A12E7C4D2B211E21008DE82B /* LongVolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E7C4C2B211E21008DE82B /* LongVolumeSlider.swift */; };
+		A12E7C4F2B21201A008DE82B /* MusicRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E7C4E2B21201A008DE82B /* MusicRow.swift */; };
+		A12E7C512B21217B008DE82B /* Okinawa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A12E7C502B21217B008DE82B /* Okinawa.mp3 */; };
+		A12E7C532B2149D0008DE82B /* MusicProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E7C522B2149D0008DE82B /* MusicProgress.swift */; };
+		A12E7C552B218A9D008DE82B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12E7C542B218A9D008DE82B /* TimerView.swift */; };
 		A1EC08132AFC6CD600476223 /* Study_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC08122AFC6CD600476223 /* Study_AppApp.swift */; };
 		A1EC08152AFC6CD600476223 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EC08142AFC6CD600476223 /* ContentView.swift */; };
 		A1EC08172AFC6CD800476223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1EC08162AFC6CD800476223 /* Assets.xcassets */; };
@@ -43,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A12E7C482B211C88008DE82B /* MusicFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFile.swift; sourceTree = "<group>"; };
+		A12E7C4C2B211E21008DE82B /* LongVolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongVolumeSlider.swift; sourceTree = "<group>"; };
+		A12E7C4E2B21201A008DE82B /* MusicRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicRow.swift; sourceTree = "<group>"; };
+		A12E7C502B21217B008DE82B /* Okinawa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Okinawa.mp3; sourceTree = "<group>"; };
+		A12E7C522B2149D0008DE82B /* MusicProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicProgress.swift; sourceTree = "<group>"; };
+		A12E7C542B218A9D008DE82B /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		A1EC080F2AFC6CD600476223 /* Study App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1EC08122AFC6CD600476223 /* Study_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Study_AppApp.swift; sourceTree = "<group>"; };
 		A1EC08142AFC6CD600476223 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 		A1EC08422AFC6D3900476223 /* Audio Files */ = {
 			isa = PBXGroup;
 			children = (
+				A12E7C502B21217B008DE82B /* Okinawa.mp3 */,
 				A1EC08552AFC8C8400476223 /* barista.mp3 */,
 				A1EC08522AFC872A00476223 /* fire.mp3 */,
 				A1EC08512AFC872A00476223 /* morningBirds.mp3 */,
@@ -147,9 +160,14 @@
 			isa = PBXGroup;
 			children = (
 				A1EC08442AFC6D7900476223 /* VolumeSlider.swift */,
+				A12E7C4C2B211E21008DE82B /* LongVolumeSlider.swift */,
 				A1EC08492AFC801200476223 /* AudioFile.swift */,
+				A12E7C482B211C88008DE82B /* MusicFile.swift */,
 				A1EC084B2AFC801D00476223 /* AudioRow.swift */,
+				A12E7C4E2B21201A008DE82B /* MusicRow.swift */,
+				A12E7C522B2149D0008DE82B /* MusicProgress.swift */,
 				A1EC084D2AFC81E700476223 /* AudioControl.swift */,
+				A12E7C542B218A9D008DE82B /* TimerView.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -267,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1EC081A2AFC6CD800476223 /* Preview Assets.xcassets in Resources */,
+				A12E7C512B21217B008DE82B /* Okinawa.mp3 in Resources */,
 				A1EC08412AFC6D2700476223 /* rain.mp3 in Resources */,
 				A1EC08502AFC850500476223 /* espressoMachine.mp3 in Resources */,
 				A1EC083D2AFC6D0C00476223 /* bgMusic.mp3 in Resources */,
@@ -302,9 +321,14 @@
 				A1EC08452AFC6D7900476223 /* VolumeSlider.swift in Sources */,
 				A1EC08152AFC6CD600476223 /* ContentView.swift in Sources */,
 				A1EC08132AFC6CD600476223 /* Study_AppApp.swift in Sources */,
+				A12E7C492B211C88008DE82B /* MusicFile.swift in Sources */,
+				A12E7C4D2B211E21008DE82B /* LongVolumeSlider.swift in Sources */,
 				A1EC084E2AFC81E700476223 /* AudioControl.swift in Sources */,
+				A12E7C552B218A9D008DE82B /* TimerView.swift in Sources */,
 				A1EC08482AFC7EB700476223 /* ColorStyles.swift in Sources */,
+				A12E7C532B2149D0008DE82B /* MusicProgress.swift in Sources */,
 				A1EC084A2AFC801200476223 /* AudioFile.swift in Sources */,
+				A12E7C4F2B21201A008DE82B /* MusicRow.swift in Sources */,
 				A1EC084C2AFC801D00476223 /* AudioRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
