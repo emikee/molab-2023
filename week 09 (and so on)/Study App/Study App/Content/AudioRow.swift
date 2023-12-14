@@ -28,15 +28,16 @@ struct AudioRow: View {
     var audio: AudioFile
     @State private var player: AVAudioPlayer? = nil
     @State private var volume: Float = 0
-    private var normalFillColor: Color { ColorStyles.white.opacity(0.5) }
-    private var emptyColor: Color { ColorStyles.white.opacity(0.3) }
+    private var normalFillColor: Color { ColorStyles.text.opacity(0.5) }
+    private var emptyColor: Color { ColorStyles.text.opacity(0.2) }
+    private var paragraph: Color {ColorStyles.text.opacity(0.7)}
     
     var body: some View {
         VStack {
             volumeSlider(
                 value: $volume,
                 inRange: 0...audio.audioMax,
-                activeFillColor: ColorStyles.white,
+                activeFillColor: ColorStyles.text,
                 fillColor: normalFillColor,
                 emptyColor: emptyColor,
                 width: 96,
@@ -59,7 +60,7 @@ struct AudioRow: View {
             }
             Text(audio.name)
                 .fontWeight(.medium)
-                .foregroundColor(ColorStyles.white)
+                .foregroundColor(paragraph)
                 .multilineTextAlignment(.center)
                 .padding(.top, 8.0)
         }

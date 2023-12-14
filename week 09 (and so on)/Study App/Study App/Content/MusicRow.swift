@@ -26,8 +26,9 @@ struct MusicRow: View {
     var audio: MusicFile
     @State private var player: AVAudioPlayer? = nil
     @State private var volume: Float = 0
-    private var normalFillColor: Color { ColorStyles.white.opacity(0.5) }
-    private var emptyColor: Color { ColorStyles.white.opacity(0.3) }
+    private var normalFillColor: Color { ColorStyles.text.opacity(0.5) }
+    private var emptyColor: Color { ColorStyles.text.opacity(0.2) }
+    private var paragraph: Color {ColorStyles.text.opacity(0.7)}
     @State private var playerDuration: TimeInterval = 100
     private let maxDuration = TimeInterval(240)
     @State private var musicIndex = 0
@@ -35,11 +36,45 @@ struct MusicRow: View {
     @State private var musicUrl = musicfiles[0].url
     
     var body: some View {
-        VStack {
+        VStack (spacing: 24){
+            HStack {
+                Button{
+                    musicIndex = (musicIndex+1) % musicfiles.count
+                    musicName = musicfiles[musicIndex].name
+                    musicUrl = musicfiles[musicIndex].url
+                    player = loadSound(musicUrl)
+                    player?.numberOfLoops = -1
+                    player?.volume = volume
+                    player?.play()
+                } label: {
+                    Image(systemName: "backward.fill")
+                }
+                Spacer()
+                Text(musicName)
+                    .font(.headline)
+                    .fontWeight(.medium)
+                    .foregroundColor(paragraph)
+                Spacer()
+                Button{
+                    musicIndex = (musicIndex+1) % musicfiles.count
+                    musicName = musicfiles[musicIndex].name
+                    musicUrl = musicfiles[musicIndex].url
+                    player = loadSound(musicUrl)
+                    player?.numberOfLoops = -1
+                    player?.volume = volume
+                    player?.play()
+                    
+                } label: {
+                    Image(systemName: "forward.fill")
+                }
+                
+            }
+            .foregroundColor(ColorStyles.text)
+ 
             LongVolumeSlider(
                 value: $volume,
                 inRange: 0...audio.audioMax,
-                activeFillColor: ColorStyles.white,
+                activeFillColor: ColorStyles.text,
                 fillColor: normalFillColor,
                 emptyColor: emptyColor,
                 height: 8,
@@ -54,34 +89,15 @@ struct MusicRow: View {
                         print("paused \(musicUrl)")
                     }
                 })
-            .frame(width: 240)
+            .frame(width: 300)
             .onAppear() {
                 player = loadSound(musicUrl)
                 player?.numberOfLoops = -1
                 player?.volume = 0
             }
-            Text(musicName)
-                .fontWeight(.medium)
-                .foregroundColor(ColorStyles.white)
-                .multilineTextAlignment(.center)
-                .padding(.top, 8.0)
             
-            MusicProgress(value: $playerDuration, inRange: TimeInterval.zero...maxDuration, activeFillColor: ColorStyles.white, fillColor: normalFillColor, emptyColor: emptyColor, height: 8) { started in
-                
-            }
-            .frame(width: 240)
-            
-            Button{
-                musicIndex = (musicIndex+1) % musicfiles.count
-                musicName = musicfiles[musicIndex].name
-                musicUrl = musicfiles[musicIndex].url
-                player = loadSound(musicUrl)
-                player?.numberOfLoops = -1
-                player?.play()
-            } label: {
-                Text("Skip \(musicIndex)")
-            }
         }
+        .frame(width: 300)
         
     }
     

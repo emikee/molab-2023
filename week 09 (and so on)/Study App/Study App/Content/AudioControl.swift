@@ -12,40 +12,45 @@ struct AudioControl: View {
         
         let containerWidth:CGFloat = UIScreen.main.bounds.width - 32.0
         
-        ScrollView{
+        ScrollView {
             MusicRow(audio: musicfiles[0])
-                .padding(.all, 32.0)
+                .padding(.all, 16.0)
                 .frame(maxWidth: .infinity)
-            Grid(
-                alignment: .center,
-                horizontalSpacing: 8,
-                verticalSpacing: 32) {
-                    GridRow {
-                        AudioRow(audio: audiofiles[0])
-                            .frame(width: containerWidth * 0.33)
-                        AudioRow(audio: audiofiles[1])
-                            .frame(width: containerWidth * 0.33)
-                        AudioRow(audio: audiofiles[2])
-                            .frame(width: containerWidth * 0.33)
+            Spacer()
+                .frame(height: 32)
+            VStack (spacing: 24) {
+                Text("Sounds")
+                    .font(.headline)
+                Grid(
+                    alignment: .center,
+                    horizontalSpacing: 8,
+                    verticalSpacing: 24) {
+                        GridRow {
+                            AudioRow(audio: audiofiles[0])
+                                .frame(width: containerWidth * 0.33)
+                            AudioRow(audio: audiofiles[1])
+                                .frame(width: containerWidth * 0.33)
+                            AudioRow(audio: audiofiles[2])
+                                .frame(width: containerWidth * 0.33)
+                        }
+                        .frame(maxWidth: .infinity)
+                        GridRow {
+                            AudioRow(audio: audiofiles[3])
+                                .frame(width: containerWidth * 0.33)
+                            AudioRow(audio: audiofiles[4])
+                                .frame(width: containerWidth * 0.33)
+                            AudioRow(audio: audiofiles[5])
+                                .frame(width: containerWidth * 0.33)
+                        }
+                        .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
-                    GridRow {
-                        AudioRow(audio: audiofiles[3])
-                            .frame(width: containerWidth * 0.33)
-                        AudioRow(audio: audiofiles[4])
-                            .frame(width: containerWidth * 0.33)
-                        AudioRow(audio: audiofiles[5])
-                            .frame(width: containerWidth * 0.33)
-                    }
-                    .frame(maxWidth: .infinity)
-                }
-                .padding(.vertical, 32.0)
-                .padding(.horizontal, 16.0)
+                    .padding(.horizontal, 16.0)
+            }
+            
         }
         .padding(.horizontal, 2.0)
         .padding(.vertical, 24.0)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(ColorStyles.black)
     }
 }
 
