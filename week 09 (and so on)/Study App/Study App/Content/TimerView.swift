@@ -145,7 +145,7 @@ struct TimerView: View {
                     }
                     
                     Circle()
-                        .stroke(ColorStyles.bgColor, lineWidth: 48)
+                        .stroke(Color("DiscBg"), lineWidth: 48)
                         .shadow(color: shadowColor, radius: shadowRadius, x: shadowX, y: shadowY)
                         .onAppear() {
                             withAnimation(.linear(duration: 3).repeatForever()) {
